@@ -51,9 +51,10 @@
             // btnMula
             // 
             btnMula.Anchor = AnchorStyles.None;
-            btnMula.BackColor = SystemColors.ControlLight;
+            btnMula.BackColor = SystemColors.ActiveCaption;
             btnMula.FlatStyle = FlatStyle.Flat;
             btnMula.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMula.ForeColor = SystemColors.ButtonHighlight;
             btnMula.Location = new Point(254, 177);
             btnMula.Name = "btnMula";
             btnMula.Size = new Size(300, 120);

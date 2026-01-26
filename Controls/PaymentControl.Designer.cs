@@ -28,10 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            label1 = new Label();
+            pictureBoxQr = new PictureBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQr).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(312, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(176, 32);
+            label1.TabIndex = 0;
+            label1.Text = "SILA IMBAS QR";
+            // 
+            // pictureBoxQr
+            // 
+            pictureBoxQr.Location = new Point(349, 100);
+            pictureBoxQr.Name = "pictureBoxQr";
+            pictureBoxQr.Size = new Size(100, 50);
+            pictureBoxQr.TabIndex = 1;
+            pictureBoxQr.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(312, 378);
+            label2.Name = "label2";
+            label2.Size = new Size(178, 15);
+            label2.TabIndex = 2;
+            label2.Text = "sila tunggu pengesahan bayaran";
+            // 
+            // PaymentControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label2);
+            Controls.Add(pictureBoxQr);
+            Controls.Add(label1);
+            Name = "PaymentControl";
+            Size = new Size(830, 427);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQr).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private PictureBox pictureBoxQr;
+        private Label label2;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PhotoboothVipstudios.Services;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PhotoboothVipstudios.Controls
@@ -8,27 +10,45 @@ namespace PhotoboothVipstudios.Controls
         private readonly MainForm? _main;
 
         private int _countdown = 3;
-        private System.Windows.Forms.Timer _countdownTimer;
+        private readonly System.Windows.Forms.Timer _countdownTimer;
 
+
+        // =========================
+        // Constructor (Designer)
+        // =========================
         public CameraControl()
         {
             InitializeComponent();
 
+            // Countdown label default
             label1.Visible = false;
 
+            // Countdown timer
             _countdownTimer = new System.Windows.Forms.Timer();
-            _countdownTimer.Interval = 1000;
+
+            {
+                _countdownTimer.Interval = 1000;
+
+            }
+            ;
             _countdownTimer.Tick += CountdownTimer_Tick;
         }
 
+        // =========================
+        // Constructor (Runtime)
+        // =========================
         public CameraControl(MainForm main) : this()
         {
             _main = main;
         }
 
-        // 📌 Dipanggil bila tekan MULA
+        // =========================
+        // Start photo session
+        // =========================
         public void StartPhotoSession(int startFrom = 3)
         {
+            _countdownTimer.Stop();
+
             _countdown = startFrom;
             label1.Text = _countdown.ToString();
             label1.Visible = true;
@@ -36,28 +56,48 @@ namespace PhotoboothVipstudios.Controls
             _countdownTimer.Start();
         }
 
-        // 📌 Setiap 1 saat
-        private void CountdownTimer_Tick(object sender, EventArgs e)
+        // =========================
+        // Countdown tick
+        // =========================
+        private void CountdownTimer_Tick(object? sender, EventArgs e)
         {
             _countdown--;
 
             if (_countdown > 0)
             {
                 label1.Text = _countdown.ToString();
+                return;
             }
-            else
-            {
-                _countdownTimer.Stop();
-                label1.Visible = false;
 
-                CaptureImage(); // 📸 auto snap
-            }
+            _countdownTimer.Stop();
+            label1.Visible = false;
+
+            CaptureImage();
         }
 
-        // 📌 Placeholder dulu
-        public void CaptureImage()
+        // =========================
+        // Capture image (Dummy for now)
+        // =========================
+        private void CaptureImage()
         {
-            MessageBox.Show("📸 SNAP! Countdown OK");
+            try
+            {
+                if (_main == null)
+                    throw new InvalidOperationException("MainForm reference is null.");
+
+                Image image = CameraService.CaptureDummy();
+
+                _main.ShowPreview(image);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Camera Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }

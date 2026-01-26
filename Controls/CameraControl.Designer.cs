@@ -42,9 +42,9 @@
             // 
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 376);
+            panel1.Location = new Point(0, 331);
             panel1.Name = "panel1";
-            panel1.Size = new Size(848, 105);
+            panel1.Size = new Size(848, 150);
             panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -59,25 +59,28 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(848, 105);
+            tableLayoutPanel1.Size = new Size(848, 150);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAmbilGambar
             // 
             btnAmbilGambar.Anchor = AnchorStyles.None;
-            btnAmbilGambar.Location = new Point(215, 3);
+            btnAmbilGambar.BackColor = SystemColors.ActiveCaption;
+            btnAmbilGambar.Font = new Font("Fugaz One", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAmbilGambar.ForeColor = Color.DarkOrchid;
+            btnAmbilGambar.Location = new Point(180, 3);
             btnAmbilGambar.Name = "btnAmbilGambar";
-            btnAmbilGambar.Size = new Size(418, 46);
+            btnAmbilGambar.Size = new Size(487, 69);
             btnAmbilGambar.TabIndex = 0;
             btnAmbilGambar.Text = "AMBIL GAMBAR";
-            btnAmbilGambar.UseVisualStyleBackColor = true;
+            btnAmbilGambar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(848, 376);
+            pictureBox1.Size = new Size(848, 331);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
