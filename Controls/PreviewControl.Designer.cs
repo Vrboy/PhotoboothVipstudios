@@ -30,8 +30,10 @@
         {
             pictureBoxPreview = new PictureBox();
             btnRetake = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             btnContinue = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPreview).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBoxPreview
@@ -44,23 +46,41 @@
             // 
             // btnRetake
             // 
+            btnRetake.Anchor = AnchorStyles.None;
             btnRetake.BackColor = SystemColors.ActiveCaptionText;
-            btnRetake.Font = new Font("Shrikhand", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRetake.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRetake.ForeColor = SystemColors.ButtonHighlight;
-            btnRetake.Location = new Point(166, 319);
+            btnRetake.Location = new Point(68, 8);
             btnRetake.Name = "btnRetake";
             btnRetake.Size = new Size(186, 84);
             btnRetake.TabIndex = 1;
-            btnRetake.Text = "Ambil Semula ";
+            btnRetake.Text = "AMBIL SEMULA";
             btnRetake.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.None;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(btnRetake, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnContinue, 1, 0);
+            tableLayoutPanel1.Location = new Point(105, 302);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(645, 100);
+            tableLayoutPanel1.TabIndex = 3;
             // 
             // btnContinue
             // 
+            btnContinue.Anchor = AnchorStyles.None;
             btnContinue.BackColor = SystemColors.MenuHighlight;
-            btnContinue.Font = new Font("Shrikhand", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnContinue.Location = new Point(436, 302);
+            btnContinue.Font = new Font("Impact", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnContinue.ForeColor = SystemColors.ButtonHighlight;
+            btnContinue.Location = new Point(366, 3);
             btnContinue.Name = "btnContinue";
-            btnContinue.Size = new Size(234, 101);
+            btnContinue.Size = new Size(234, 94);
             btnContinue.TabIndex = 2;
             btnContinue.Text = "TERUSKAN";
             btnContinue.UseVisualStyleBackColor = false;
@@ -69,12 +89,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnContinue);
-            Controls.Add(btnRetake);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(pictureBoxPreview);
             Name = "PreviewControl";
             Size = new Size(864, 434);
             ((System.ComponentModel.ISupportInitialize)pictureBoxPreview).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -82,6 +102,7 @@
 
         private PictureBox pictureBoxPreview;
         private Button btnRetake;
+        private TableLayoutPanel tableLayoutPanel1;
         private Button btnContinue;
     }
 }
